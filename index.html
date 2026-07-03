@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="theme-color" content="#ffd54f">
+<title>우리집 등원 도우미</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- 최초 탭 오버레이: iPad Safari 는 사용자 제스처 전 오디오 재생을 막으므로
+     여기서 AudioContext 를 깨운다 (알람 소리·음성 안내의 전제 조건) -->
+<div id="startOverlay" class="overlay">
+  <div class="overlay-card">
+    <div class="overlay-emoji">🌞</div>
+    <h1>좋은 아침!</h1>
+    <p>화면을 눌러서 오늘을 시작해요</p>
+  </div>
+</div>
+
+<header>
+  <div>
+    <div id="clock">--:--</div>
+    <div id="dateLabel"></div>
+  </div>
+  <div class="header-right">
+    <div id="countdown"></div>
+    <button id="settingsBtn" class="icon-btn" title="설정">⚙️</button>
+  </div>
+</header>
+
+<div id="connBar" class="conn-bar" hidden></div>
+<div id="sosBanner" class="sos-banner" hidden>
+  🚨 아이가 아빠를 찾았어요! <button id="sosDismiss">확인</button>
+</div>
+
+<main>
+  <section id="nowBanner" class="now-banner">
+    <div class="now-label">지금 할 일</div>
+    <div id="nowStage" class="now-stage">준비 중...</div>
+  </section>
+
+  <section id="stageList" class="stage-list"></section>
+
+  <section id="doneBanner" class="done-banner" hidden>
+    🎉 모두 등교 완료! 잘 다녀와요 👋
+  </section>
+</main>
+
+<footer>
+  <button id="sosBtn" class="sos-btn">🚨 아빠 부르기</button>
+</footer>
+
+<!-- SOS 확인 다이얼로그: 실수 탭으로 긴급 푸시가 가는 걸 막는다 -->
+<div id="sosConfirm" class="overlay" hidden>
+  <div class="overlay-card">
+    <div class="overlay-emoji">📢</div>
+    <h1>정말 아빠를 부를까요?</h1>
+    <p>아빠 폰이 크게 울려요</p>
+    <div class="dialog-btns">
+      <button id="sosYes" class="btn-danger">네, 불러주세요</button>
+      <button id="sosNo" class="btn-plain">아니요</button>
+    </div>
+  </div>
+</div>
+
+<!-- 설정 모달 -->
+<div id="settingsModal" class="overlay" hidden>
+  <div class="overlay-card settings-card">
+    <h1>설정</h1>
+
+    <label class="field">
+      <span>가족 채널 이름 (모든 기기에 동일하게 입력)</span>
+      <input id="setTopic" type="text" placeholder="예: dungwon-kim-7532" autocapitalize="off">
+    </label>
+
+    <div class="field-row">
+      <label class="field"><span>첫째 이름</span><input id="setKid1" type="text"></label>
+      <label class="field"><span>둘째 이름</span><input id="setKid2" type="text" placeholder="비우면 한 명만"></label>
+    </div>
+
+    <div class="field">
+      <span>시간표</span>
+      <div id="stageEditor"></div>
+      <button id="addStageBtn" class="btn-plain small">＋ 항목 추가</button>
+    </div>
+
+    <div class="field-row">
+      <label class="check-field"><input id="setWeekendOff" type="checkbox"> 주말엔 알람 끄기</label>
+      <label class="check-field"><input id="setParentMode" type="checkbox"> 부모 모드 (알람 없음·보기 전용)</label>
+    </div>
+
+    <label class="field">
+      <span>미완료 알림 시각 (이 시각에 안 끝난 항목이 있으면 아빠에게 푸시)</span>
+      <input id="setLateTime" type="time">
+    </label>
+
+    <div class="field">
+      <span>기기 연결 링크 (아빠 폰에서 열기)</span>
+      <div id="shareLinks" class="share-links"></div>
+    </div>
+
+    <div class="dialog-btns">
+      <button id="testPushBtn" class="btn-plain">테스트 푸시</button>
+      <button id="settingsSave" class="btn-primary">저장</button>
+      <button id="settingsClose" class="btn-plain">닫기</button>
+    </div>
+  </div>
+</div>
+
+<script src="app.js"></script>
+</body>
+</html>
