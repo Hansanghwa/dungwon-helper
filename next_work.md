@@ -6,8 +6,9 @@
 - JS 문법 검증 완료 (JavaScriptCore parse-check). **실기기 런타임 테스트는 아직 안 함**
 
 ## 다음 할 일
-1. ~~GitHub 배포~~ ✅ 완료 (2026-07-03): https://shhan2.github.io/dungwon-helper/
-   (repo: https://github.com/shhan2/dungwon-helper, Pages 라이브 확인됨 — HTML/JS/CSS 전부 200)
+1. ~~GitHub 배포~~ ✅ 완료 (2026-07-03): https://hansanghwa.github.io/dungwon-helper/
+   (repo: https://github.com/Hansanghwa/dungwon-helper, Pages 라이브 확인됨 — HTML/JS/CSS 전부 200)
+   ⚠️ shhan2 는 **회사 계정** — 개인 프로젝트 업로드 금지. 처음 올렸다가 삭제하고 Hansanghwa 로 재배포함.
 2. 실기기 테스트: 패드에서 알람 소리·음성·체크 → S25 ntfy 푸시 수신 확인
 3. iPad Safari 특이사항 확인: 백그라운드 탭에서 setInterval 이 멈추면 알람 유실 가능
    → 전체화면(홈 화면 추가) + 자동잠금 해제로 회피, 실사용으로 검증 필요
