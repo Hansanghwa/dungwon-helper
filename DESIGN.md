@@ -57,5 +57,5 @@
 - Trade-off: 기기마다 1회 수동 입력 필요.
 
 ## Out of Scope
-- 주간 통계/리포트, 계정/인증, 오프라인 PWA(service worker), 홈캠 스트리밍(Alfred 앱이 담당),
-  음성통화(카카오톡 iPad 가 담당). 지금은 안 한다.
+- 주간 통계/리포트, 계정/인증, 오프라인 PWA(service worker), 홈캠 스트리밍(Tapo 앱이 담당),
+  음성통화(iPhone 11 카카오톡이 담당). 지금은 안 한다.

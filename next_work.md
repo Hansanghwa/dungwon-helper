@@ -12,7 +12,7 @@
 2. 실기기 테스트: 패드에서 알람 소리·음성·체크 → S25 ntfy 푸시 수신 확인
 3. iPad Safari 특이사항 확인: 백그라운드 탭에서 setInterval 이 멈추면 알람 유실 가능
    → 전체화면(홈 화면 추가) + 자동잠금 해제로 회피, 실사용으로 검증 필요
-4. 카카오톡 iPad 보이스톡 실테스트, Alfred 카메라 설치 (README ②③)
+4. Tapo 카메라 설치 (구매 완료 — 보안 3수칙 포함, README ③) + iPhone 11 카카오톡 전화기 설정 (README ②)
 5. git 커밋 author 가 자동 설정됨 (Eunjoo Cho <EunjooCho@Macmini.local>) — 원하면 수정
 
 ## 메모
